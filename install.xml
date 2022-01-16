@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+	<name>SMFPacks Shoutbox Lite</name>
+	<id>nibogo:shoutBox</id>
+	<version>1.1</version>
+	<homepage>http://www.smfpacks.com/</homepage>
+	<file name="$boarddir/index.php">
+		<operation>
+			<search position="replace"><![CDATA[call_user_func(smf_main());]]></search>
+			<add><![CDATA[// SMFPacks Shoutbox
+call_user_func(Shoutbox_Load(smf_main()));]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA['viewquery', 'viewsmfile']]></search>
+			<add><![CDATA['viewquery', 'viewsmfile', 'shoutbox']]></add>
+		</operation>
+	</file>
+</modification>

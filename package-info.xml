@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+	<name>SMFPacks Shoutbox</name>
+	<id>nibogo:shoutBox</id>
+	<type>modification</type>
+	<version>1.1</version>
+	<!-- 2.0.x -->
+	<install for="2.0 - 2.0.99">
+		<redirect url="?action=admin;area=shoutbox" type="inline">SMFPacks Shoutbox has been installed now you're going to be redirected to its admin panel.</redirect>
+		<modification>install.xml</modification>
+		<require-dir name="Sources" destination="$boarddir" />
+		<require-dir name="Themes" destination="$boarddir" />
+		<database>db_install.php</database>
+	</install>
+	
+	<uninstall for="2.0 - 2.0.99">
+		<modification reverse="true">install.xml</modification>
+		<remove-file error="skip" name="$sourcedir/Subs-Shoutbox.php" />
+		<remove-file error="skip" name="$sourcedir/ManageShoutbox.php" />
+		<remove-file error="skip" name="$sourcedir/Shoutbox.php" />
+		<remove-file error="skip" name="$themedir/Shoutbox.template.php" />
+		<remove-file error="skip" name="$languagedir/Shoutbox.english.php" />
+		<remove-file error="skip" name="$languagedir/Shoutbox.english-utf8.php" />
+		<remove-file error="skip" name="$imagesdir/bbc/bgcolor.gif" />
+		<remove-file error="skip" name="$imagesdir/bbc/face.gif" />
+		<remove-file error="skip" name="$imagesdir/bbc/fontcolor.gif" />
+		<remove-file error="skip" name="$imagesdir/bbc/nosound.gif" />
+		<remove-file error="skip" name="$imagesdir/bbc/smileys.gif" />
+		<remove-file error="skip" name="$imagesdir/loading.gif" />
+		<remove-file error="skip" name="$themedir/css/shoutbox.css" />
+		<remove-file error="skip" name="$themedir/css/shoutbox_compact.css" />
+		<remove-dir error="skip" name="$imagesdir/shoutbox" />
+		<remove-dir error="skip" name="$themedir/scripts/shoutbox" />
+		<database>db_install.php</database>
+	</uninstall>
+</package-info>
